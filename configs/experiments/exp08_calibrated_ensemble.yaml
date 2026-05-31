@@ -1,0 +1,33 @@
+# Experiment 8 — Final: calibrated probability ensemble.
+# Motivation: Exps 4 and 6 produced two classifiers with different
+# error profiles: Logistic Regression on sparse TF-IDF excels on
+# common labels with exact terminology; Logistic Regression on
+# SBERT-augmented features excels on paraphrase-heavy tail labels.
+# Their per-label probability outputs are calibrated with sigmoid
+# (already approximately calibrated for LR) and averaged with weights
+# tuned per label on the validation fold. Per-label thresholds from
+# Exp 7 are re-tuned on the ensemble's outputs.
+# Hypothesis: weighted ensemble + re-tuned per-label thresholds
+# achieves the lowest Hamming Loss of the project.
+name: "exp08_calibrated_ensemble"
+inherits: "default.yaml"
+notes: |
+  Final configuration submitted on the test set. Ensemble of the two
+  strongest single models from Exps 4 and 6, with per-label weights
+  and per-label thresholds tuned on a 5-fold MultilabelStratified
+  out-of-fold probability matrix.
+features:
+  use: ["tfidf_word", "tfidf_char", "sbert"]
+  sbert_combine: "concat"
+model:
+  type: "stacked"
+  members:
+    - { name: "tfidf_lr",   features: ["tfidf_word", "tfidf_char"], head: "logreg_ovr" }
+    - { name: "fused_lr",   features: ["tfidf_word", "tfidf_char", "sbert"], head: "logreg_ovr" }
+  combine: "per_label_weighted_average"
+evaluation:
+  per_label_threshold: true
+  threshold_search_grid: [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60, 0.65]
+  threshold_objective: "f1"
+inference:
+  min_labels_per_doc: 1
