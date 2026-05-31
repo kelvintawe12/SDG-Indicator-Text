@@ -1,0 +1,82 @@
+# Default experiment configuration. Each experiment under experiments/
+# overrides a subset of these keys.
+
+seed: 42
+
+data:
+  raw_train: data/raw/Devex_train.csv
+  raw_test:  data/raw/Devex_test_questions.csv
+  interim_dir: data/interim
+  processed_dir: data/processed
+  # Devex schema: a single 'Text' column plus the document 'Type'
+  # (Grant / Project / News / ...). We feed Type as a soft prefix so the
+  # model can condition on document kind when the lexicon overlaps.
+  text_columns: ["Type", "Text"]
+  id_column: "Unique ID"
+  meta_columns: []
+  # Long-format labels: each row has up to N optional 'Label k' columns
+  # holding strings like '3.b.2 - Total net official development assistance...'.
+  # We pivot them into a multi-hot matrix over the indicator code (the
+  # prefix before ' - ').
+  label_format: "long_label_columns"
+  label_column_prefix: "Label"
+  label_code_regex: '^\s*([0-9]+\.[0-9a-zA-Z]+(?:\.[0-9a-zA-Z]+)?)\s*-'
+
+preprocessing:
+  lowercase: true
+  strip_html: true
+  strip_urls: true
+  strip_numbers: false                            # keep numeric tokens — SDG 3 cites stats heavily
+  expand_contractions: true
+  remove_punctuation: true
+  remove_stopwords: false                         # leave to vectorizer's stop_words=english
+  lemmatize: false                                # WordNet lemma adds little for n-gram TF-IDF
+  min_token_len: 2
+  max_text_chars: 20000                           # truncate runaway documents
+
+split:
+  strategy: "iterative_stratified"                 # MultilabelStratifiedKFold
+  n_folds: 5
+  val_fraction: 0.15                              # for single hold-out experiments
+
+features:
+  tfidf_word:
+    ngram_range: [1, 2]
+    min_df: 2
+    max_df: 0.95
+    sublinear_tf: true
+    max_features: 60000
+    stop_words: "english"
+  tfidf_char:
+    analyzer: "char_wb"
+    ngram_range: [3, 5]
+    min_df: 2
+    max_df: 0.95
+    sublinear_tf: true
+    max_features: 60000
+  sbert:
+    model_name: "sentence-transformers/all-MiniLM-L6-v2"
+    batch_size: 32
+    normalize: true
+
+model:
+  type: "logreg_ovr"                              # one of: logreg_ovr, linsvc_ovr, complement_nb, sgd_logloss, classifier_chain, stacked
+  logreg:
+    C: 4.0
+    solver: "liblinear"
+    class_weight: "balanced"
+    max_iter: 2000
+  linsvc:
+    C: 1.0
+    class_weight: "balanced"
+
+evaluation:
+  primary_metric: "hamming_loss"                  # lower is better
+  secondary_metrics: ["micro_f1", "macro_f1", "samples_f1", "subset_accuracy", "lrap"]
+  per_label_threshold: true                        # tune one threshold per label on validation
+  threshold_search_grid: [0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.45, 0.50, 0.55, 0.60]
+  threshold_objective: "f1"                       # threshold tuned for label-F1, evaluated against hamming
+
+inference:
+  default_threshold: 0.30
+  min_labels_per_doc: 0                           # set to 1 to force at least one prediction

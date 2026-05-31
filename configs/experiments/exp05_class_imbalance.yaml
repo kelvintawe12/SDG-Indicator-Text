@@ -1,0 +1,27 @@
+# Experiment 5 — Class imbalance handling.
+# Motivation: EDA (see notebook) shows label frequencies are highly
+# skewed — head SDG 3 indicators (3.3, 3.7, 3.8) dominate while tail
+# indicators (3.a, 3.b, 3.d) have <50 positives. Exp 4's best
+# classifier still misses tail labels. We compare three principled
+# remedies that do NOT require new features:
+#   (a) class_weight='balanced' (already on — control)
+#   (b) per-label sample weighting via inverse positive frequency
+#   (c) MLSMOTE-style synthetic minority oversampling on the TF-IDF
+#       feature space (iterative-stratification + skmultilearn idea).
+# Hypothesis: (b) and (c) lift macro-F1 on tail labels; Hamming Loss
+# may rise slightly if FPs increase. We will report the tradeoff.
+name: "exp05_class_imbalance"
+inherits: "default.yaml"
+notes: |
+  Same features and best classifier from Exp 4. Adds inverse-frequency
+  sample weighting and MLSMOTE-style oversampling as comparison arms.
+features:
+  use: ["tfidf_word", "tfidf_char"]
+model:
+  type: "logreg_ovr"           # placeholder; runner substitutes Exp 4 winner
+  imbalance:
+    sweep: ["class_weight_only", "inverse_freq_sample_weight", "mlsmote"]
+evaluation:
+  per_label_threshold: false
+inference:
+  default_threshold: 0.5
