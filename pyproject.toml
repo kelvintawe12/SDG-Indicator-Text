@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sdgtext"
+version = "0.1.0"
+description = "Multi-label SDG 3 indicator classification from development-sector text."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{ name = "Group" }]
+license = { text = "MIT" }
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "scikit-learn>=1.4",
+    "scipy>=1.11",
+    "nltk>=3.8",
+    "regex>=2024.5",
+    "tqdm>=4.66",
+    "joblib>=1.3",
+    "pyyaml>=6.0",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+    "sentence-transformers>=2.7",
+    "iterative-stratification>=0.1.7",
+    "imbalanced-learn>=0.12",
+    "rich>=13.7",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "pytest-cov>=5.0", "ruff>=0.5"]
+
+[project.scripts]
+sdgtext = "sdgtext.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
