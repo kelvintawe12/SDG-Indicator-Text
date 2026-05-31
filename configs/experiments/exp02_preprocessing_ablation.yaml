@@ -1,0 +1,32 @@
+# Experiment 2 — Preprocessing ablation.
+# Motivation: Exp 1 baseline established. Development-sector text contains
+# acronyms (WHO, UNICEF, HIV), numeric statistics, and varied casing. We
+# now isolate the effect of preprocessing choices on Hamming Loss to
+# decide what stays in the final pipeline.
+# Variant probed here: aggressive normalization (stopword removal +
+# stronger punctuation/number stripping + contraction expansion).
+# Expectation: removing stopwords may hurt because health-policy text
+# uses negation ("no access to", "not vaccinated"). We want to confirm
+# or refute that with numbers before committing.
+name: "exp02_preprocessing_ablation"
+inherits: "default.yaml"
+notes: |
+  Same model/features as Exp 1; only preprocessing changes. Compared
+  head-to-head with Exp 1 to decide which normalization steps to keep.
+preprocessing:
+  lowercase: true
+  strip_html: true
+  strip_urls: true
+  strip_numbers: true
+  expand_contractions: true
+  remove_punctuation: true
+  remove_stopwords: true
+  lemmatize: true
+features:
+  use: ["tfidf_word"]
+model:
+  type: "logreg_ovr"
+evaluation:
+  per_label_threshold: false
+inference:
+  default_threshold: 0.5

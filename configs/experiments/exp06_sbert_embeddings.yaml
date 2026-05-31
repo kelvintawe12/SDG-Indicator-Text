@@ -1,0 +1,22 @@
+# Experiment 6 — Dense semantic features via Sentence-BERT.
+# Motivation: TF-IDF + char n-grams capture surface form; they miss
+# paraphrase ("immunization coverage" vs "vaccine uptake"). On
+# CPU we cannot fine-tune BERT, but we CAN precompute SBERT embeddings
+# (all-MiniLM-L6-v2, 384-d) once and feed them to a linear head.
+# Hypothesis: SBERT alone underperforms sparse TF-IDF on small data,
+# but SBERT-concatenated-with-TF-IDF beats either alone — sparse
+# captures exact terminology, dense captures semantics.
+name: "exp06_sbert_embeddings"
+inherits: "default.yaml"
+notes: |
+  Three arms: (a) SBERT only + LR; (b) TFIDF (word+char) only + LR
+  (Exp 3/4 control); (c) hstack(TFIDF_sparse, SBERT_dense_l2) + LR.
+features:
+  use: ["tfidf_word", "tfidf_char", "sbert"]
+  sbert_combine: "concat"
+model:
+  type: "logreg_ovr"
+evaluation:
+  per_label_threshold: false
+inference:
+  default_threshold: 0.5
