@@ -1,0 +1,21 @@
+# Experiment 3 — Feature engineering: add character n-gram TF-IDF.
+# Motivation: Exp 2 showed which preprocessing to keep. The remaining
+# representation weakness is OOV / morphology: development text has many
+# rare acronyms and compound terms (e.g. "antiretroviral",
+# "vector-borne"). Character n-grams capture sub-word signal that pure
+# word n-grams miss and are cheap on CPU.
+# Hypothesis: stacking word-TFIDF + char-TFIDF via hstack improves
+# Hamming Loss without changing the classifier.
+name: "exp03_word_plus_char_tfidf"
+inherits: "default.yaml"
+notes: |
+  Same preprocessing chosen in Exp 2; features = hstack(word, char_wb).
+  Same classifier as Exp 1 for clean attribution of gains to features.
+features:
+  use: ["tfidf_word", "tfidf_char"]
+model:
+  type: "logreg_ovr"
+evaluation:
+  per_label_threshold: false
+inference:
+  default_threshold: 0.5

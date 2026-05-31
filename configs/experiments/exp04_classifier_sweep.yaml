@@ -1,0 +1,24 @@
+# Experiment 4 — Classifier comparison on best feature set.
+# Motivation: Features locked from Exp 3. We now compare three
+# multi-label-compatible classifiers on the same representation to find
+# the best-performing head before investing compute in tuning:
+#   (a) Logistic Regression OvR (Exp 3 carryover, control)
+#   (b) Linear SVC OvR + Platt scaling for probabilities
+#   (c) Complement Naive Bayes OvR — strong sparse-text baseline,
+#       robust to class imbalance.
+# Hypothesis: Logistic Regression and Linear SVC will be close;
+# Complement NB may surprise on rare labels.
+name: "exp04_classifier_sweep"
+inherits: "default.yaml"
+notes: |
+  Sweeps model.type across [logreg_ovr, linsvc_ovr, complement_nb] using
+  the feature set chosen in Exp 3. Best classifier carries into Exp 5.
+features:
+  use: ["tfidf_word", "tfidf_char"]
+model:
+  type: "__sweep__"
+  sweep: ["logreg_ovr", "linsvc_ovr", "complement_nb"]
+evaluation:
+  per_label_threshold: false
+inference:
+  default_threshold: 0.5

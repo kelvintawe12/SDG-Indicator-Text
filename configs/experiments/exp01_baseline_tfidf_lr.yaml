@@ -1,0 +1,22 @@
+# Experiment 1 — Baseline.
+# Goal: establish a defensible floor with minimal moving parts so every
+# later experiment has something to be measured against.
+# Hypothesis: word-level TF-IDF (1-2 grams) + one-vs-rest L2 logistic
+# regression with class_weight=balanced is a strong baseline for
+# multi-label text classification on ~3K documents.
+name: "exp01_baseline_tfidf_lr"
+inherits: "default.yaml"
+notes: |
+  Minimal preprocessing (lowercase + strip URLs/HTML), word TF-IDF only,
+  logistic regression OvR with class_weight='balanced', global threshold 0.5.
+preprocessing:
+  lemmatize: false
+  remove_stopwords: false
+features:
+  use: ["tfidf_word"]
+model:
+  type: "logreg_ovr"
+evaluation:
+  per_label_threshold: false
+inference:
+  default_threshold: 0.5
