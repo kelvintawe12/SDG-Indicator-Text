@@ -1,0 +1,339 @@
+[05/31/26 12:25:11] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:25:11] INFO     EDA: {'n_samples': 2991, 'n_labels': 27,           
+                             'cardinality': 1.9709127382146439, 'density':      
+                             0.07299676808202385, 'max_per_doc': 10,            
+                             'zero_label_docs': 0}                              
+[05/31/26 12:25:15] INFO     EDA figures →                                      
+                             /Users/mac/Downloads/SDG-Indicator/SDG-Indicator-Te
+                             xt/reports/figures/eda_overview.png +              
+                             cooccurrence.png                                   
+                    INFO     >>> exp01_baseline_tfidf_lr                        
+[05/31/26 12:25:15] INFO     ── Experiment: exp01_baseline_tfidf_lr             
+[05/31/26 12:25:16] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:25:26] INFO     Features: X_train=(2555, 60000), X_val=(436, 60000)
+[05/31/26 12:25:36] INFO     ✓ exp01_baseline_tfidf_lr hamming=0.0523           
+                             microF1=0.644 macroF1=0.554                        
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp01_baseline_tfidf_lr           
+[05/31/26 12:25:36] INFO     >>> exp02_preprocessing_ablation                   
+                    INFO     ── Experiment: exp02_preprocessing_ablation        
+[05/31/26 12:25:37] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:25:56] INFO     Features: X_train=(2555, 60000), X_val=(436, 60000)
+[05/31/26 12:25:59] INFO     ✓ exp02_preprocessing_ablation hamming=0.0513      
+                             microF1=0.652 macroF1=0.579                        
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp02_preprocessing_ablation      
+[05/31/26 12:25:59] INFO     >>> exp03_word_plus_char_tfidf                     
+                    INFO     ── Experiment: exp03_word_plus_char_tfidf          
+[05/31/26 12:25:59] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:26:26] INFO     Features: X_train=(2555, 120000), X_val=(436,      
+                             120000)                                            
+[05/31/26 12:26:47] INFO     ✓ exp03_word_plus_char_tfidf hamming=0.0491        
+                             microF1=0.666 macroF1=0.598                        
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp03_word_plus_char_tfidf        
+[05/31/26 12:26:47] INFO     >>> exp04_classifier_sweep__logreg_ovr             
+                    INFO     ── Experiment: exp04_classifier_sweep__logreg_ovr  
+[05/31/26 12:26:48] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:27:14] INFO     Features: X_train=(2555, 120000), X_val=(436,      
+                             120000)                                            
+[05/31/26 12:27:33] INFO     ✓ exp04_classifier_sweep__logreg_ovr hamming=0.0491
+                             microF1=0.666 macroF1=0.598                        
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp04_classifier_sweep__logreg_ovr
+[05/31/26 12:27:33] INFO     >>> exp04_classifier_sweep__linsvc_ovr             
+                    INFO     ── Experiment: exp04_classifier_sweep__linsvc_ovr  
+[05/31/26 12:27:34] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:28:00] INFO     Features: X_train=(2555, 120000), X_val=(436,      
+                             120000)                                            
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+/Users/mac/Library/Python/3.9/lib/python/site-packages/sklearn/svm/_classes.py:32: FutureWarning: The default value of `dual` will change from `True` to `'auto'` in 1.5. Set the value of `dual` explicitly to suppress the warning.
+  warnings.warn(
+[05/31/26 12:28:38] INFO     ✓ exp04_classifier_sweep__linsvc_ovr hamming=0.0462
+                             microF1=0.626 macroF1=0.514                        
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp04_classifier_sweep__linsvc_ovr
+[05/31/26 12:28:39] INFO     >>> exp04_classifier_sweep__complement_nb          
+[05/31/26 12:28:39] INFO     ── Experiment:                                     
+                             exp04_classifier_sweep__complement_nb              
+[05/31/26 12:28:39] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:29:06] INFO     Features: X_train=(2555, 120000), X_val=(436,      
+                             120000)                                            
+[05/31/26 12:29:08] INFO     ✓ exp04_classifier_sweep__complement_nb            
+                             hamming=0.0682 microF1=0.276 macroF1=0.110         
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp04_classifier_sweep__complement
+                             _nb                                                
+[05/31/26 12:29:08] INFO     >>> exp05_class_imbalance__class_weight_only       
+                    INFO     ── Experiment:                                     
+                             exp05_class_imbalance__class_weight_only           
+[05/31/26 12:29:09] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:29:35] INFO     Features: X_train=(2555, 120000), X_val=(436,      
+                             120000)                                            
+[05/31/26 12:29:54] INFO     ✓ exp05_class_imbalance__class_weight_only         
+                             hamming=0.0491 microF1=0.666 macroF1=0.598         
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp05_class_imbalance__class_weigh
+                             t_only                                             
+[05/31/26 12:29:54] INFO     >>>                                                
+                             exp05_class_imbalance__inverse_freq_sample_weight  
+                    INFO     ── Experiment:                                     
+                             exp05_class_imbalance__inverse_freq_sample_weight  
+[05/31/26 12:29:54] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:30:21] INFO     Features: X_train=(2555, 120000), X_val=(436,      
+                             120000)                                            
+[05/31/26 12:30:40] INFO     ✓ exp05_class_imbalance__inverse_freq_sample_weight
+                             hamming=0.0491 microF1=0.666 macroF1=0.598         
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp05_class_imbalance__inverse_fre
+                             q_sample_weight                                    
+[05/31/26 12:30:40] INFO     >>> exp05_class_imbalance__mlsmote                 
+                    INFO     ── Experiment: exp05_class_imbalance__mlsmote      
+[05/31/26 12:30:41] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:31:07] INFO     Features: X_train=(2555, 120000), X_val=(436,      
+                             120000)                                            
+[05/31/26 12:31:32] INFO     ✓ exp05_class_imbalance__mlsmote hamming=0.0522    
+                             microF1=0.656 macroF1=0.580                        
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp05_class_imbalance__mlsmote    
+[05/31/26 12:31:33] INFO     >>> exp06_sbert_embeddings                         
+[05/31/26 12:31:33] INFO     ── Experiment: exp06_sbert_embeddings              
+[05/31/26 12:31:33] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:32:10] INFO     Encoding 2555 docs with                            
+                             sentence-transformers/all-MiniLM-L6-v2 (CPU)…      
+Batches:   0%|          | 0/80 [00:00<?, ?it/s]Batches:   1%|▏         | 1/80 [00:01<02:15,  1.72s/it]Batches:   2%|▎         | 2/80 [00:03<02:11,  1.68s/it]Batches:   4%|▍         | 3/80 [00:04<02:02,  1.58s/it]Batches:   5%|▌         | 4/80 [00:06<01:55,  1.53s/it]Batches:   6%|▋         | 5/80 [00:07<01:56,  1.56s/it]Batches:   8%|▊         | 6/80 [00:09<01:53,  1.53s/it]Batches:   9%|▉         | 7/80 [00:10<01:49,  1.50s/it]Batches:  10%|█         | 8/80 [00:12<01:48,  1.51s/it]Batches:  11%|█▏        | 9/80 [00:13<01:47,  1.52s/it]Batches:  12%|█▎        | 10/80 [00:15<01:43,  1.48s/it]Batches:  14%|█▍        | 11/80 [00:16<01:40,  1.45s/it]Batches:  15%|█▌        | 12/80 [00:18<01:38,  1.44s/it]Batches:  16%|█▋        | 13/80 [00:19<01:36,  1.44s/it]Batches:  18%|█▊        | 14/80 [00:20<01:33,  1.42s/it]Batches:  19%|█▉        | 15/80 [00:22<01:31,  1.41s/it]Batches:  20%|██        | 16/80 [00:23<01:30,  1.42s/it]Batches:  21%|██▏       | 17/80 [00:25<01:27,  1.39s/it]Batches:  22%|██▎       | 18/80 [00:26<01:25,  1.37s/it]Batches:  24%|██▍       | 19/80 [00:27<01:23,  1.37s/it]Batches:  25%|██▌       | 20/80 [00:29<01:21,  1.35s/it]Batches:  26%|██▋       | 21/80 [00:30<01:19,  1.35s/it]Batches:  28%|██▊       | 22/80 [00:31<01:17,  1.33s/it]Batches:  29%|██▉       | 23/80 [00:33<01:19,  1.40s/it]Batches:  30%|███       | 24/80 [00:34<01:16,  1.37s/it]Batches:  31%|███▏      | 25/80 [00:35<01:13,  1.34s/it]Batches:  32%|███▎      | 26/80 [00:37<01:12,  1.34s/it]Batches:  34%|███▍      | 27/80 [00:38<01:11,  1.34s/it]Batches:  35%|███▌      | 28/80 [00:39<01:08,  1.33s/it]Batches:  36%|███▋      | 29/80 [00:41<01:06,  1.31s/it]Batches:  38%|███▊      | 30/80 [00:42<01:05,  1.32s/it]Batches:  39%|███▉      | 31/80 [00:43<01:05,  1.34s/it]Batches:  40%|████      | 32/80 [00:45<01:03,  1.32s/it]Batches:  41%|████▏     | 33/80 [00:46<01:01,  1.32s/it]Batches:  42%|████▎     | 34/80 [00:47<01:01,  1.34s/it]Batches:  44%|████▍     | 35/80 [00:49<00:59,  1.33s/it]Batches:  45%|████▌     | 36/80 [00:50<01:02,  1.42s/it]Batches:  46%|████▋     | 37/80 [00:52<01:04,  1.49s/it]Batches:  48%|████▊     | 38/80 [00:53<01:03,  1.51s/it]Batches:  49%|████▉     | 39/80 [00:55<01:02,  1.53s/it]Batches:  50%|█████     | 40/80 [00:57<01:02,  1.57s/it]Batches:  51%|█████▏    | 41/80 [00:58<01:00,  1.56s/it]Batches:  52%|█████▎    | 42/80 [01:00<00:59,  1.57s/it]Batches:  54%|█████▍    | 43/80 [01:02<01:00,  1.62s/it]Batches:  55%|█████▌    | 44/80 [01:03<00:55,  1.53s/it]Batches:  56%|█████▋    | 45/80 [01:04<00:53,  1.54s/it]Batches:  57%|█████▊    | 46/80 [01:06<00:53,  1.57s/it]Batches:  59%|█████▉    | 47/80 [01:07<00:48,  1.46s/it]Batches:  60%|██████    | 48/80 [01:08<00:44,  1.39s/it]Batches:  61%|██████▏   | 49/80 [01:10<00:44,  1.43s/it]Batches:  62%|██████▎   | 50/80 [01:11<00:40,  1.37s/it]Batches:  64%|██████▍   | 51/80 [01:12<00:36,  1.25s/it]Batches:  65%|██████▌   | 52/80 [01:13<00:31,  1.12s/it]Batches:  66%|██████▋   | 53/80 [01:14<00:27,  1.02s/it]Batches:  68%|██████▊   | 54/80 [01:15<00:24,  1.07it/s]Batches:  69%|██████▉   | 55/80 [01:15<00:22,  1.12it/s]Batches:  70%|███████   | 56/80 [01:16<00:19,  1.20it/s]Batches:  71%|███████▏  | 57/80 [01:17<00:19,  1.15it/s]Batches:  72%|███████▎  | 58/80 [01:17<00:16,  1.30it/s]Batches:  74%|███████▍  | 59/80 [01:18<00:13,  1.52it/s]Batches:  75%|███████▌  | 60/80 [01:18<00:10,  1.94it/s]Batches:  76%|███████▋  | 61/80 [01:18<00:07,  2.49it/s]Batches:  78%|███████▊  | 62/80 [01:18<00:05,  3.13it/s]Batches:  79%|███████▉  | 63/80 [01:18<00:04,  3.86it/s]Batches:  80%|████████  | 64/80 [01:19<00:03,  4.49it/s]Batches:  81%|████████▏ | 65/80 [01:19<00:02,  5.25it/s]Batches:  84%|████████▍ | 67/80 [01:19<00:01,  6.69it/s]Batches:  86%|████████▋ | 69/80 [01:19<00:01,  7.77it/s]Batches:  89%|████████▉ | 71/80 [01:19<00:01,  8.68it/s]Batches:  91%|█████████▏| 73/80 [01:19<00:00,  9.40it/s]Batches:  94%|█████████▍| 75/80 [01:20<00:00, 10.30it/s]Batches:  96%|█████████▋| 77/80 [01:20<00:00, 11.15it/s]Batches:  99%|█████████▉| 79/80 [01:20<00:00, 12.40it/s]Batches: 100%|██████████| 80/80 [01:20<00:00,  1.01s/it]
+[05/31/26 12:33:54] INFO     SBERT cache write: sbert_23504bb9e650446f.npy      
+                             shape=(2555, 384)                                  
+                    INFO     Encoding 436 docs with                             
+                             sentence-transformers/all-MiniLM-L6-v2 (CPU)…      
+Batches:   0%|          | 0/14 [00:00<?, ?it/s]Batches:   7%|▋         | 1/14 [00:01<00:22,  1.77s/it]Batches:  14%|█▍        | 2/14 [00:03<00:20,  1.68s/it]Batches:  21%|██▏       | 3/14 [00:04<00:17,  1.58s/it]Batches:  29%|██▊       | 4/14 [00:06<00:15,  1.55s/it]Batches:  36%|███▌      | 5/14 [00:07<00:13,  1.49s/it]Batches:  43%|████▎     | 6/14 [00:09<00:11,  1.45s/it]Batches:  50%|█████     | 7/14 [00:10<00:10,  1.52s/it]Batches:  57%|█████▋    | 8/14 [00:12<00:09,  1.54s/it]Batches:  64%|██████▍   | 9/14 [00:13<00:07,  1.48s/it]Batches:  71%|███████▏  | 10/14 [00:14<00:05,  1.34s/it]Batches:  79%|███████▊  | 11/14 [00:14<00:02,  1.02it/s]Batches:  86%|████████▌ | 12/14 [00:15<00:01,  1.40it/s]Batches: 100%|██████████| 14/14 [00:15<00:00,  2.43it/s]Batches: 100%|██████████| 14/14 [00:15<00:00,  1.08s/it]
+[05/31/26 12:34:13] INFO     SBERT cache write: sbert_4d73912542bc69d6.npy      
+                             shape=(436, 384)                                   
+[05/31/26 12:34:14] INFO     Features: X_train=(2555, 120384), X_val=(436,      
+                             120384)                                            
+[05/31/26 12:34:38] INFO     ✓ exp06_sbert_embeddings hamming=0.0469            
+                             microF1=0.689 macroF1=0.623                        
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp06_sbert_embeddings            
+[05/31/26 12:34:38] INFO     >>> exp07_threshold_tuning                         
+                    INFO     ── Experiment: exp07_threshold_tuning              
+[05/31/26 12:34:38] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:35:04] INFO     SBERT cache hit: sbert_23504bb9e650446f.npy        
+                    INFO     SBERT cache hit: sbert_4d73912542bc69d6.npy        
+[05/31/26 12:35:05] INFO     Features: X_train=(2555, 120384), X_val=(436,      
+                             120384)                                            
+[05/31/26 12:35:29] INFO     ✓ exp07_threshold_tuning hamming=0.0449            
+                             microF1=0.711 macroF1=0.671                        
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp07_threshold_tuning            
+[05/31/26 12:35:29] INFO     >>> exp08_calibrated_ensemble                      
+                    INFO     ── Experiment: exp08_calibrated_ensemble           
+[05/31/26 12:35:30] INFO     Loaded Devex_train.csv — rows=2991, labels=27,     
+                             issues=2                                           
+[05/31/26 12:35:56] INFO     SBERT cache hit: sbert_23504bb9e650446f.npy        
+                    INFO     SBERT cache hit: sbert_4d73912542bc69d6.npy        
+[05/31/26 12:35:56] INFO     Features: X_train=(2555, 120384), X_val=(436,      
+                             120384)                                            
+                    INFO     Stacked ensemble: refitting members on their own   
+                             feature subsets                                    
+[05/31/26 12:36:36] INFO       member  fit on features=['tfidf_word',           
+                             'tfidf_char']                                      
+[05/31/26 12:36:57] INFO     SBERT cache hit: sbert_23504bb9e650446f.npy        
+                    INFO     SBERT cache hit: sbert_4d73912542bc69d6.npy        
+[05/31/26 12:37:21] INFO       member  fit on features=['tfidf_word',           
+                             'tfidf_char', 'sbert']                             
+[05/31/26 12:37:22] INFO     ✓ exp08_calibrated_ensemble hamming=0.0435         
+                             microF1=0.717 macroF1=0.680                        
+                    INFO     Saved artifacts →                                  
+                             artifacts/models/exp08_calibrated_ensemble         
+[05/31/26 12:37:24] INFO     Results figures + summary →                        
+                             /Users/mac/Downloads/SDG-Indicator/SDG-Indicator-Te
+                             xt/reports                                         
+
+=== SUMMARY (sorted by Hamming Loss ↓) ===
+                                       experiment  hamming_loss  micro_f1  macro_f1  samples_f1  subset_accuracy     lrap
+                        exp08_calibrated_ensemble      0.043493  0.716501  0.679701    0.745282         0.426606 0.851309
+                           exp07_threshold_tuning      0.044937  0.710771  0.671481    0.741437         0.399083 0.851495
+               exp04_classifier_sweep__linsvc_ovr      0.046211  0.625860  0.514206    0.623344         0.383028 0.838544
+                           exp06_sbert_embeddings      0.046891  0.689189  0.623253    0.717506         0.392202 0.851495
+                       exp03_word_plus_char_tfidf      0.049100  0.665509  0.598126    0.681918         0.373853 0.833778
+               exp04_classifier_sweep__logreg_ovr      0.049100  0.665509  0.598126    0.681918         0.373853 0.833778
+         exp05_class_imbalance__class_weight_only      0.049100  0.665509  0.598126    0.681918         0.373853 0.833778
+exp05_class_imbalance__inverse_freq_sample_weight      0.049100  0.665509  0.598126    0.681918         0.373853 0.833778
+                     exp02_preprocessing_ablation      0.051308  0.651672  0.578770    0.662960         0.362385 0.825866
+                   exp05_class_imbalance__mlsmote      0.052158  0.656215  0.579772    0.674144         0.348624 0.824905
+                          exp01_baseline_tfidf_lr      0.052328  0.643519  0.553577    0.653448         0.357798 0.813633
+            exp04_classifier_sweep__complement_nb      0.068213  0.275924  0.109517    0.264390         0.172018 0.650512
+
+Wrote /Users/mac/Downloads/SDG-Indicator/SDG-Indicator-Text/reports/experiment_summary.csv
